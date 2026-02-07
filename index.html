@@ -3,103 +3,81 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Leonela 💖</title>
+<title>Sorpresa 💖</title>
 
 <style>
 body{
   margin:0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family:'Segoe UI',sans-serif;
   overflow:hidden;
-  background: linear-gradient(180deg,#ffd6e7,#ffc0cb);
+  background:linear-gradient(180deg,#ffd6e7,#ffc0cb);
 }
 
-/* CONTENEDORES */
+/* PANTALLAS */
 .screen{
   position:absolute;
   width:100%;
   height:100%;
   display:flex;
-  flex-direction:column;
   justify-content:center;
   align-items:center;
+  flex-direction:column;
   text-align:center;
-  padding:30px;
-  transition: all 1s ease;
+  padding:25px;
+  transition:1s ease;
 }
 
 .hidden{
   opacity:0;
+  transform:scale(1.3);
   pointer-events:none;
-  transform:scale(1.4);
 }
 
-/* TITULO */
-h1{
-  font-size:34px;
-  color:#fff;
-  text-shadow:0 0 10px #ff4da6;
-  margin-bottom:50px;
-}
-
-/* BOTON */
+/* BOTÓN */
 .btn-wrap{
   position:relative;
 }
 
 button{
-  padding:18px 35px;
-  font-size:20px;
+  padding:18px 38px;
   border:none;
   border-radius:40px;
+  font-size:20px;
   background:#ff4da6;
   color:white;
   cursor:pointer;
-  box-shadow:0 10px 30px rgba(0,0,0,.2);
-  z-index:5;
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
   position:relative;
   overflow:hidden;
 }
 
-/* EFECTO EXPLOSIÓN */
+/* EFECTO ÁTOMOS */
 button.explode{
-  animation: explode 1s forwards;
+  animation:atom 1s forwards;
 }
 
-@keyframes explode{
+@keyframes atom{
   0%{transform:scale(1);}
-  50%{transform:scale(2) rotate(10deg); filter:blur(4px);}
+  50%{transform:scale(2.5) rotate(10deg); filter:blur(6px);}
   100%{transform:scale(0); opacity:0;}
 }
 
-/* GATITO ENCIMA DEL BOTÓN */
+/* GATO PASTEL */
 #pastel{
-  width:120px;
+  width:130px;
   position:absolute;
   top:-120px;
   left:50%;
   transform:translateX(-50%);
-  animation: bounce 2s infinite;
+  animation:float 3s ease-in-out infinite;
 }
 
-@keyframes bounce{
+@keyframes float{
   0%,100%{transform:translateX(-50%) translateY(0)}
-  50%{transform:translateX(-50%) translateY(-10px)}
+  50%{transform:translateX(-50%) translateY(-12px)}
 }
 
-/* LLUVIA */
-.rain{
-  position:absolute;
-  width:60px;
-  pointer-events:none;
-  animation: fall linear infinite;
-}
-
-@keyframes fall{
-  from{transform:translateY(-120px);}
-  to{transform:translateY(120vh);}
-}
-
-/* TEXTO */
+/* TARJETA TEXTO */
 .card{
   background:white;
   border-radius:25px;
@@ -107,11 +85,25 @@ button.explode{
   color:#444;
   font-size:17px;
   max-width:340px;
+  line-height:1.7;
   box-shadow:0 15px 40px rgba(0,0,0,.2);
-  line-height:1.6;
 }
 
-/* GATOS ESQUINAS */
+/* LLUVIA BONITA */
+.rain{
+  position:absolute;
+  width:60px;
+  pointer-events:none;
+  animation:fall linear infinite;
+  opacity:.95;
+}
+
+@keyframes fall{
+  0%{transform:translateY(-120px) rotate(0deg);}
+  100%{transform:translateY(120vh) rotate(360deg);}
+}
+
+/* GATOS ESQUINA */
 .corner{
   position:absolute;
   width:100px;
@@ -119,72 +111,78 @@ button.explode{
 
 .top-left{top:0; left:0;}
 .top-right{top:0; right:0;}
+
 </style>
 </head>
 
 <body>
 
-<!-- MUSICA SUAVE OFFLINE -->
+<!-- música suave offline -->
 <audio autoplay loop>
 <source src="data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABAAZGF0YQQAAAAA" type="audio/wav">
 </audio>
 
-<!-- PANTALLA 1 -->
+
+<!-- =================== PANTALLA 1 =================== -->
 <div id="screen1" class="screen">
 
-  <h1>Leonela 💖</h1>
-
   <div class="btn-wrap">
-      <img src="pastel.jpg" id="pastel">
-      <button id="btn">Abrir sorpresa ✨</button>
+    <img src="pastel.jpg" id="pastel">
+    <button id="btn">Abrir sorpresa ✨</button>
   </div>
 
 </div>
 
-<!-- PANTALLA 2 -->
+
+<!-- =================== PANTALLA 2 =================== -->
 <div id="screen2" class="screen hidden">
 
-  <img src="lluvia1.jpg" class="corner top-left">
-  <img src="lluvia2.jpg" class="corner top-right">
+  <!-- SOLO 2 GATOS -->
+  <img src="lluvia4.jpg" class="corner top-left">
+  <img src="lluvia3.jpg" class="corner top-right">
 
   <div class="card">
-  Espero la pase increíble el día de hoy, siéntase especial no solo hoy sino cada día de su vida ✨<br><br>
-
-  Ha sido divertida toda esta travesía entre la intriga y la realidad.<br>
-  He visto que es una persona fenomenal, piensa diferente y eso la hace auténtica.<br>
-  Ha sido divertido estarla conociendo.<br><br>
-
-  <b>Feliz Cumpleaños 🎊 Leonela</b><br><br>
-
-  Nunca cambie esa forma que la hace auténtica… yyyyyyy no sé cómo le hizo pa que me tomara el tiempo de hacer esto jajaja xdxd.<br>
-  (6 de febrero usted, 6 de noviembre yo… interesting)
+  Espero la pase increíble el día de hoy, sientase especial no solo hoy sino cada día de su vida ✨
+  <br><br>
+  Ha sido divertida toda esta travesía entre la intriga y la realidad 
+  <br>
+  He visto que es una persona fenomenal, piensa diferente y eso la hace auténtica 
+  <br>
+  Ha sido divertido estarla conociendo 
+  <br><br>
+  Feliz Cumpleaños 🎊 #25 aunque usted aún está chiquita jaja 
+  <br><br>
+  Nunca cambie esa forma que la hace auténtica yyyyyyy no se como le hizo pa que me tomara el tiempo de hacer esto jajaja xdxd (6 de febrero usted, 6 de noviembre yo… interesting)
   </div>
 
 </div>
+
 
 <script>
 
-/* ========= LLUVIA DE GATITOS ========= */
-const cats = ["lluvia1.jpg","lluvia2.jpg","lluvia3.jpg","lluvia4.jpg","lluvia5.jpg"];
+/* ========= LLUVIA BONITA ESCALONADA ========= */
+const cats=["lluvia1.jpg","lluvia2.jpg","lluvia3.jpg","lluvia4.jpg","lluvia5.jpg"];
 
-for(let i=0;i<20;i++){
+for(let i=0;i<25;i++){
   let img=document.createElement("img");
   img.src=cats[Math.floor(Math.random()*cats.length)];
   img.className="rain";
+
   img.style.left=Math.random()*100+"vw";
-  img.style.animationDuration=(5+Math.random()*5)+"s";
   img.style.width=(40+Math.random()*40)+"px";
+  img.style.animationDuration=(6+Math.random()*5)+"s";
+  img.style.animationDelay=(Math.random()*5)+"s";
+
   document.body.appendChild(img);
 }
 
-/* ========= BOTON ========= */
-const btn=document.getElementById("btn");
+/* ========= BOTÓN ========= */
 btn.onclick=()=>{
   btn.classList.add("explode");
 
   setTimeout(()=>{
-    document.getElementById("screen1").classList.add("hidden");
-    document.getElementById("screen2").classList.remove("hidden");
+    screen1.classList.add("hidden");
+    screen2.classList.remove("hidden");
 
     document.querySelectorAll(".rain").forEach(e=>e.remove());
   },900);
