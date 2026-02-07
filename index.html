@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Sorpresa 💖</title>
+<title>Sorpresa ✨</title>
 
 <style>
 body{
@@ -33,6 +33,20 @@ body{
   pointer-events:none;
 }
 
+/* ===== SEGUNDA PÁGINA ROSADA SUTIL ===== */
+#screen2{
+  background:linear-gradient(180deg,#ffe6f0,#ffd1e6,#ffc2dd);
+}
+
+/* TITULO LEONELA */
+.title{
+  font-size:32px;
+  color:#ff4da6;
+  margin-bottom:20px;
+  font-weight:bold;
+  text-shadow:0 0 10px rgba(255,77,166,.3);
+}
+
 /* BOTÓN */
 .btn-wrap{
   position:relative;
@@ -47,8 +61,6 @@ button{
   color:white;
   cursor:pointer;
   box-shadow:0 12px 30px rgba(0,0,0,.25);
-  position:relative;
-  overflow:hidden;
 }
 
 /* EFECTO ÁTOMOS */
@@ -77,7 +89,7 @@ button.explode{
   50%{transform:translateX(-50%) translateY(-12px)}
 }
 
-/* TARJETA TEXTO */
+/* TARJETA */
 .card{
   background:white;
   border-radius:25px;
@@ -89,13 +101,12 @@ button.explode{
   box-shadow:0 15px 40px rgba(0,0,0,.2);
 }
 
-/* LLUVIA BONITA */
+/* LLUVIA */
 .rain{
   position:absolute;
   width:60px;
   pointer-events:none;
   animation:fall linear infinite;
-  opacity:.95;
 }
 
 @keyframes fall{
@@ -103,7 +114,7 @@ button.explode{
   100%{transform:translateY(120vh) rotate(360deg);}
 }
 
-/* GATOS ESQUINA */
+/* ESQUINAS */
 .corner{
   position:absolute;
   width:100px;
@@ -117,13 +128,12 @@ button.explode{
 
 <body>
 
-<!-- música suave offline -->
 <audio autoplay loop>
 <source src="data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABAAZGF0YQQAAAAA" type="audio/wav">
 </audio>
 
 
-<!-- =================== PANTALLA 1 =================== -->
+<!-- PANTALLA 1 -->
 <div id="screen1" class="screen">
 
   <div class="btn-wrap">
@@ -134,12 +144,14 @@ button.explode{
 </div>
 
 
-<!-- =================== PANTALLA 2 =================== -->
+<!-- PANTALLA 2 -->
 <div id="screen2" class="screen hidden">
 
-  <!-- SOLO 2 GATOS -->
-  <img src="lluvia4.jpg" class="corner top-left">
-  <img src="lluvia3.jpg" class="corner top-right">
+  <!-- SOLO AQUÍ APARECE LEONELA -->
+  <div class="title">Leonela ✨</div>
+
+  <img src="lluvia3.jpg" class="corner top-left">
+  <img src="lluvia4.jpg" class="corner top-right">
 
   <div class="card">
   Espero la pase increíble el día de hoy, sientase especial no solo hoy sino cada día de su vida ✨
@@ -160,30 +172,24 @@ button.explode{
 
 <script>
 
-/* ========= LLUVIA BONITA ESCALONADA ========= */
 const cats=["lluvia1.jpg","lluvia2.jpg","lluvia3.jpg","lluvia4.jpg","lluvia5.jpg"];
 
 for(let i=0;i<25;i++){
   let img=document.createElement("img");
   img.src=cats[Math.floor(Math.random()*cats.length)];
   img.className="rain";
-
   img.style.left=Math.random()*100+"vw";
   img.style.width=(40+Math.random()*40)+"px";
   img.style.animationDuration=(6+Math.random()*5)+"s";
   img.style.animationDelay=(Math.random()*5)+"s";
-
   document.body.appendChild(img);
 }
 
-/* ========= BOTÓN ========= */
 btn.onclick=()=>{
   btn.classList.add("explode");
-
   setTimeout(()=>{
     screen1.classList.add("hidden");
     screen2.classList.remove("hidden");
-
     document.querySelectorAll(".rain").forEach(e=>e.remove());
   },900);
 }
@@ -191,3 +197,4 @@ btn.onclick=()=>{
 </script>
 </body>
 </html>
+
